@@ -2,7 +2,8 @@
 #
 
 CC = g++ -std=c++14
-CFLAGS = -g -I/usr/include/jsoncpp
+CFLAGS = -g -I/usr/homebrew/include
+# CFLAGS = -g -I/usr/include/jsoncpp
 
 # CFLAGS = -g -D_ECS35B_DEBUG_ -I/usr/include/jsoncpp
 # CFLAGS = -g -Wall -Wstrict-prototypes
@@ -34,22 +35,6 @@ all: 	ecs36bserver ecs36bupdate ecs36bsearch ecs36b_hw2_ref		\
 #
 #
 
-hw3ref3client.h:	ecs36b_s2024_hw3ref3.json
-	jsonrpcstub ecs36b_s2024_hw3ref3.json --cpp-server=hw3ref3Server --cpp-client=hw3ref3Client
-
-hw3ref3server.h:	ecs36b_s2024_hw3ref3.json
-	jsonrpcstub ecs36b_s2024_hw3ref3.json --cpp-server=hw3ref3Server --cpp-client=hw3ref3Client
-
-hw3ref2client.h:	ecs36b_s2024_hw3ref2.json
-	jsonrpcstub ecs36b_s2024_hw3ref2.json --cpp-server=hw3ref2Server --cpp-client=hw3ref2Client
-
-hw3ref2server.h:		ecs36b_s2024_hw3ref2.json
-	jsonrpcstub ecs36b_s2024_hw3ref2.json --cpp-server=hw3ref2Server --cpp-client=hw3ref2Client
-
-ecs36bclient.h:		ecs36b_s2024.json
-	jsonrpcstub ecs36b_s2024.json --cpp-server=ecs36bServer --cpp-client=ecs36bClient
-
-ecs36bserver.h:		ecs36b_s2024.json
 	jsonrpcstub ecs36b_s2024.json --cpp-server=ecs36bServer --cpp-client=ecs36bClient
 
 ecs36b_hw2_ref.o:	ecs36b_hw2_ref.cpp $(CORE_INCS)
